@@ -1,6 +1,10 @@
 class User < ApplicationRecord
+  has_many :teachers
+  has_many :teachings, through: :teachers
+
+
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :lockable, and :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
