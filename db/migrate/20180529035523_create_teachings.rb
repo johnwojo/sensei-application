@@ -9,6 +9,7 @@ class CreateTeachings < ActiveRecord::Migration[5.2]
       t.string :source
       t.boolean :favorite
       t.boolean :public
+      t.integer :teacher_id
     end
   end
 end
